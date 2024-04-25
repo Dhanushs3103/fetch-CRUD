@@ -23,14 +23,21 @@ function displayData(products) {
         
         // title creation
         let title = document.createElement("p");
-        title.textContent =`Product Name: ${ product.title}`;
+        title.textContent =`Product: ${ product.title}`;
         
         // price creation
         let price = document.createElement("p");
         price.textContent =`Price: ₹ ${product.price}`;
+
+        // Add to cart button
+        let cartBtn = document.createElement("button");
+        cartBtn.textContent = "Add To Cart";
+        cartBtn.id = "cartBtn";
         
-        // appending
-        card.append(img, title, price);
+        // appending to card
+        card.append(img, title, price, cartBtn);
+        
+        // appending to root
         root.append(card);
     });
 }

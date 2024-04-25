@@ -1,20 +1,56 @@
+body{
+    font-family: Poppins, sans-serif;
+}
+
 #root {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 270px);
     gap: 20px;
     width: fit-content;
-    border: 1px solid black;
     margin: auto;
     margin-top: 50px;
 }
 
 .card {
-    border: 1px solid red;
     border-radius: 10px;
-    padding: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: fit-content;
+    height: 360px;
+    padding: 18px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
 }
 
 .card > img {
-    width: 200px;
+    width: 230px;
+    border-radius: 10px;
+    height: 220px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
+
+.card > p {
+    font-size: 18px;
+}
+
+#cartBtn {
+    padding:10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #4ec816;
+    color: #FFFFFF;
+    border: 0;
+    width: 230px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#cartBtn:hover {
+    background-color: #07b30d;
+}
+
+/* #deleteBtn {
+    padding:8px px;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #166fc8;
+    color: #FFFFFF;
+    border: 0;
+} */
