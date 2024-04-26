@@ -41,4 +41,5 @@ function displayData(products) {
         root.append(card);
     });
 }
+
     
