@@ -11,24 +11,6 @@
       "name": "Rekha",
       "email": "rekha@gmail.com",
       "password": "1234Rekha"
-    },
-    {
-      "name": "Dhanush",
-      "email": "dddad@gmails.com",
-      "password": "12345",
-      "id": 3
-    },
-    {
-      "name": "dinesh",
-      "email": "eve.holt@reqres.in",
-      "password": "12",
-      "id": 4
-    },
-    {
-      "name": "swethas",
-      "email": "dfdf@dfadfdsf",
-      "password": "12345",
-      "id": 5
     }
   ],
   "products": [
