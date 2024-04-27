@@ -11,6 +11,36 @@
       "name": "Rekha",
       "email": "rekha@gmail.com",
       "password": "1234Rekha"
+    },
+    {
+      "name": "fedro",
+      "email": "fed@gmail.com",
+      "password": "123",
+      "id": 3
+    },
+    {
+      "name": "dinesh",
+      "email": "d@gmail.com",
+      "password": "123",
+      "id": 4
+    },
+    {
+      "name": "swetha",
+      "email": "s@gmail.com",
+      "password": "123",
+      "id": 5
+    },
+    {
+      "name": "Dhanush",
+      "email": "eve.holt@reqres.in",
+      "password": "1234",
+      "id": 6
+    },
+    {
+      "name": "Ramesh",
+      "email": "ramesh@gmail.com",
+      "password": "123",
+      "id": 7
     }
   ],
   "products": [
@@ -99,5 +129,7 @@
       "ratings": 3.8
     }
   ],
-  "allUsersCart": {}
+  "allUsersCart": {
+   
+  }
 }

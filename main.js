@@ -1,4 +1,11 @@
 let root = document.getElementById("root");
+let logoutBtn = document.getElementById("logout");
+let username = document.getElementById("userName");
+let totalPrice = document.getElementById("totalPrice");
+
+logoutBtn.addEventListener("click",function(e) {
+   logout(e)
+})
 
 // function to fetch data
 async function getData() {
@@ -10,9 +17,12 @@ async function getData() {
 
 getData();
 
+// assiging name of the customer
+username.textContent = getName();
+
 // function to display data
 function displayData(products) {
-    products.forEach((product) => {
+    products.forEach((product,i) => {
         // card creation
         let card = document.createElement("div");
         card.className = "card";
@@ -23,7 +33,7 @@ function displayData(products) {
         
         // title creation
         let title = document.createElement("p");
-        title.textContent =`Product: ${ product.title}`;
+        title.textContent =`Product: ${product.title}`;
         
         // price creation
         let price = document.createElement("p");
@@ -32,6 +42,9 @@ function displayData(products) {
         // Add to cart button
         let cartBtn = document.createElement("button");
         cartBtn.textContent = "Add To Cart";
+        cartBtn.addEventListener("click",function() {
+            addToCart(product,i);
+        })
         cartBtn.id = "cartBtn";
         
         // appending to card
@@ -42,4 +55,36 @@ function displayData(products) {
     });
 }
 
+let customerName = getName();
+console.log(customerName);
+
+let customerCart = [];
+
+
+async function addToCart(product,i) {
+   try {
+    customerCart.push(...product);
+    let userData = await fetch("http://localhost:3000/allUsersCart",{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({customerName:customerCart})
+    })
+   } catch (error) {
+    console.log(error);
+   }
+}
+
+function getName () {
+    let name = JSON.parse(localStorage.getItem("user"));
+    return name;
+    console.log(name); 
+}
+
+function logout() {
+    console.log("click")
+    localStorage.removeItem("user");
+    alert("loged out successfully")
+    window.location.href ="login.html"
+   
+}
     
