@@ -53,12 +53,14 @@ body{
     align-items: center;
     padding: 0 50px;
     justify-content: space-between;
-    
     border: 1px solid black;
 }
 
-h4 {
-   
+#navChild {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
 }
 
 #logout {
@@ -71,7 +73,6 @@ h4 {
     width: 100px;
     cursor: pointer;
     font-weight: bold;
-    margin-top: 20px;
 }
 
 #logout:hover {
@@ -79,11 +80,3 @@ h4 {
 }
 
 
-/* #deleteBtn {
-    padding:8px px;
-    border-radius: 5px;
-    font-size: 16px;
-    background-color: #166fc8;
-    color: #FFFFFF;
-    border: 0;
-} */

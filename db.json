@@ -130,6 +130,14 @@
     }
   ],
   "allUsersCart": {
-   
+    "Dhanush": [
+      {
+        "id": 2,
+        "title": "TV",
+        "image": "https://5.imimg.com/data5/SELLER/Default/2023/4/299765792/GM/GW/BT/6158633/50-inch-smart-android-led-tv-500x500.jpg",
+        "price": 25000,
+        "ratings": 4
+      }
+    ]
   }
 }

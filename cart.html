@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+       #deleteBtn {
+    padding:8px 8px;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #d85f0d;
+    color: #FFFFFF;
+    border: 0;
+}
+
+.card {
+    border-radius: 10px;
+    width: fit-content;
+    height: 360px;
+    padding: 18px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+
+.card > img {
+    width: 230px;
+    border-radius: 10px;
+    height: 220px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.card > p {
+    font-size: 18px;
+}
+    </style>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+</body>
+<script>
+
+    let root = document.getElementById("root");
+    async function getData () {
+       try {
+        let res = await fetch("http://localhost:3000/allUsersCart");
+        let data = await res.json();
+        console.log(data.Dhanush)
+        displayData(data.Dhanush)
+       } catch (error) {
+        console.log(error)
+       }
+    }
+
+    getData()
+
+    function displayData(products) {
+    root.innerHTML= "";
+
+    products.forEach((product,i) => {
+        // card creation
+        let card = document.createElement("div");
+        card.className = "card";
+        
+        // image creation
+        let img = document.createElement("img");
+        img.src = product.image;
+        
+        // title creation
+        let title = document.createElement("p");
+        title.textContent =`Product: ${product.title}`;
+        
+        // price creation
+        let price = document.createElement("p");
+        price.textContent =`Price: ₹ ${product.price}`;
+
+        // Add to cart button
+        let deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Delete";
+        deleteBtn.addEventListener("click",function() {
+           
+        })
+        deleteBtn.id = "deleteBtn";
+        
+        // appending to card
+        card.append(img, title, price, deleteBtn);
+        
+        // appending to root
+        root.append(card);
+    });
+}
+</script>
+</html>

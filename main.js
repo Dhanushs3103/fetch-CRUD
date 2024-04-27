@@ -2,6 +2,9 @@ let root = document.getElementById("root");
 let logoutBtn = document.getElementById("logout");
 let username = document.getElementById("userName");
 let totalPrice = document.getElementById("totalPrice");
+totalPrice.addEventListener("click",function() {
+    window.location.href = 'cart.html'
+})
 
 logoutBtn.addEventListener("click",function(e) {
    logout(e)
@@ -60,14 +63,23 @@ console.log(customerName);
 
 let customerCart = [];
 
+async function calTotalPrice() {
+    let res = await fetch("http://localhost:3000/allUsersCart");
+    let data = await res.json();
+    let price = data.Dhanush;
+    totalPrice.textContent = `Total cart = ${price[0].price}`
+}
+
+calTotalPrice()
 
 async function addToCart(product,i) {
    try {
-    customerCart.push(...product);
+    customerCart.push(product);
+    let updatedCart = [...customerCart]
     let userData = await fetch("http://localhost:3000/allUsersCart",{
         method:"POST",
         headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({customerName:customerCart})
+        body:JSON.stringify({Dhanush:updatedCart})
     })
    } catch (error) {
     console.log(error);
